@@ -1,20 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ViewPostController!{% endblock %}
+{% block title %}Страница поста!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<div class="col-sm-3">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ viewPost.headline }}</h5>
+            <p class="card-text">{{ viewPost.dateCreate | date }}</p>
+            <p class="card-text">{{ viewPost.text }}</p>
+        </div>
+        <a href="{{ path('edit_post', {'id': viewPost.id}) }}" class="btn btn-basic">Редактировать</a>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/skillup_student/PhpstormProjects/skillup-shop-next/src/Controller/ViewPostController.php'|file_link(0) }}">src/Controller/ViewPostController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/skillup_student/PhpstormProjects/skillup-shop-next/templates/view_post/index.html.twig'|file_link(0) }}">templates/view_post/index.html.twig</a></code></li>
-    </ul>
+    </div>
+
 </div>
 {% endblock %}
