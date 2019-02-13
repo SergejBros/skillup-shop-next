@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        {% for viewPost in viewPosts %}
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ viewPost.headline }}</h5>
+                        <p class="card-text">{{ viewPost.dateCreate | date }}</p>
+                        <p class="card-text">{{ viewPost.text }}</p>
+                        <a href="{{ path('view_post', {'id': viewPost.id}) }}" class="btn btn-primary">Читать дальше</a>
+                    </div>
+
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
