@@ -10,6 +10,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Post
 {
+
+    public function __construct()
+    {
+        $this->dateCreate = new \DateTime();
+    }
+
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

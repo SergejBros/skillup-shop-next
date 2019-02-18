@@ -1,20 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EditPostController!{% endblock %}
+{% block title %} EditPostController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    {{ form_widget(form) }}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class="form-group row">
+        <div class="col-sm-4 offset-sm-2">
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+            <a href="{{ path('default') }}">
+                <button type="button" class="btn btn-primary">На главную</button>
+            </a>
+        </div>
+    </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/skillup_student/PhpstormProjects/skillup-shop-next/src/Controller/EditPostController.php'|file_link(0) }}">src/Controller/EditPostController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/skillup_student/PhpstormProjects/skillup-shop-next/templates/edit_post/index.html.twig'|file_link(0) }}">templates/edit_post/index.html.twig</a></code></li>
-    </ul>
-</div>
+    {{ form_end(form) }}
 {% endblock %}

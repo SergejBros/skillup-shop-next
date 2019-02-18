@@ -14,6 +14,7 @@ class PostAddType extends AbstractType
         $builder
             ->add('headline')
             ->add('text')
+
         ;
     }
 
